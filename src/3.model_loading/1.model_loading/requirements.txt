@@ -1,5 +1,6 @@
-PyOpenGL==3.1.5
+wheel
 glfw==2.1.0
-PyGLM==2.1.0
-Pillow==8.2.0
-assimp-py
+PyGLM==2.3.0
+PyOpenGL==3.1.5
+PyOpenGL_accelerate==3.1.5
+assimp-py==1.0.3
