@@ -263,9 +263,9 @@ def renderSphere() -> None:
         X_SEGMENTS = 64
         Y_SEGMENTS = 64
         PI = 3.14159265359
-        for y in range(Y_SEGMENTS + 1):
+        for x in range(X_SEGMENTS + 1):
 
-            for x in range(X_SEGMENTS + 1):
+            for y in range(Y_SEGMENTS + 1):
 
                 xSegment = x / X_SEGMENTS
                 ySegment = y / Y_SEGMENTS
@@ -285,7 +285,7 @@ def renderSphere() -> None:
 
                 for x in range(X_SEGMENTS + 1):
 
-                    indices.append(y       * (X_SEGMENTS + 1) + x)
+                    indices.append(y * (X_SEGMENTS + 1) + x)
                     indices.append((y + 1) * (X_SEGMENTS + 1) + x)
 
 
@@ -294,7 +294,7 @@ def renderSphere() -> None:
                 for x in range(X_SEGMENTS, -1, -1):
 
                     indices.append((y + 1) * (X_SEGMENTS + 1) + x)
-                    indices.append(y       * (X_SEGMENTS + 1) + x)
+                    indices.append(y * (X_SEGMENTS + 1) + x)
 
 
             oddRow = not oddRow
@@ -307,16 +307,17 @@ def renderSphere() -> None:
             data.append(positions[i].x)
             data.append(positions[i].y)
             data.append(positions[i].z)
-            if (len(uv) > 0):
-
-                data.append(uv[i].x)
-                data.append(uv[i].y)
 
             if (len(normals) > 0):
 
                 data.append(normals[i].x)
                 data.append(normals[i].y)
                 data.append(normals[i].z)
+
+            if (len(uv) > 0):
+
+                data.append(uv[i].x)
+                data.append(uv[i].y)
 
         dataArray = glm.array.from_numbers(glm.float32, *data)
         indicesArray = glm.array.from_numbers(glm.uint32, *indices)
@@ -330,9 +331,9 @@ def renderSphere() -> None:
         glEnableVertexAttribArray(0)
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, None)
         glEnableVertexAttribArray(1)
-        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, stride, ctypes.c_void_p(3 * glm.sizeof(glm.float32)))
+        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride, ctypes.c_void_p(3 * glm.sizeof(glm.float32)))
         glEnableVertexAttribArray(2)
-        glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, stride, ctypes.c_void_p(5 * glm.sizeof(glm.float32)))
+        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, stride, ctypes.c_void_p(6 * glm.sizeof(glm.float32)))
 
     glBindVertexArray(sphereVAO)
     glDrawElements(GL_TRIANGLE_STRIP, indexCount, GL_UNSIGNED_INT, None)
