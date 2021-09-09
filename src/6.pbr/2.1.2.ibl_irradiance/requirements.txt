@@ -1,6 +1,6 @@
 wheel
-glfw==2.1.0
-PyGLM==2.3.1
+glfw==2.2.0
+PyGLM==2.4.0
 PyOpenGL==3.1.5
 PyOpenGL_accelerate==3.1.5
 numpy==1.21.2
