@@ -86,9 +86,9 @@ class Model:
                 vertices += [0] * (2 + 3 + 3)
 
         # now wak through each of the mesh's faces (a face is a mesh its triangle) and retrieve the corresponding vertex indices.
-        for i in range(mesh.num_faces):
+        for i in range(len(mesh.indices)):
 
-            face = mesh.faces[i]
+            face = mesh.indices[i]
             # retrieve all indices of the face and store them in the indices vector
             indices += list(face)     
 

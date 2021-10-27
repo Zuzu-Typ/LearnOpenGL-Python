@@ -11,6 +11,8 @@ from shader import Shader
 
 import platform, ctypes, os
 
+from typing import List
+
 # function that loads and automatically flips an image vertically
 LOAD_IMAGE = lambda name: Image.open(name).transpose(Image.FLIP_TOP_BOTTOM)
 
@@ -84,9 +86,9 @@ class Model:
                 vertices += [0] * (2 + 3 + 3)
 
         # now wak through each of the mesh's faces (a face is a mesh its triangle) and retrieve the corresponding vertex indices.
-        for i in range(mesh.num_faces):
+        for i in range(len(mesh.indices)):
 
-            face = mesh.faces[i]
+            face = mesh.indices[i]
             # retrieve all indices of the face and store them in the indices vector
             indices += list(face)     
 
@@ -117,7 +119,7 @@ class Model:
 
     # checks all material textures of a given type and loads the textures if they're not loaded yet.
     # the required info is returned as a Texture struct.
-    def loadMaterialTextures(self, mat : dict, type : int, typeName : str) -> list[Texture]:
+    def loadMaterialTextures(self, mat : dict, type : int, typeName : str) -> List[Texture]:
 
         textures = []
         for i in range(list(mat["TEXTURES"].keys()).count(type)):
