@@ -1,6 +1,6 @@
 wheel
-glfw==2.3.0
-PyGLM==2.5.3
+glfw==2.5.0
+PyGLM==2.5.7
 PyOpenGL==3.1.5
 PyOpenGL_accelerate==3.1.5
-assimp-py==1.0.5
+assimp-py==1.0.6
