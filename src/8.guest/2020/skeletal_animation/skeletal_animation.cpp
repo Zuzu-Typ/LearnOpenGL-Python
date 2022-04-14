@@ -124,9 +124,9 @@ int main()
 		ourShader.setMat4("projection", projection);
 		ourShader.setMat4("view", view);
 
-		auto transforms = animator.GetPoseTransforms();
+        auto transforms = animator.GetFinalBoneMatrices();
 		for (int i = 0; i < transforms.size(); ++i)
-			ourShader.setMat4("finalBonesTransformations[" + std::to_string(i) + "]", transforms[i]);
+			ourShader.setMat4("finalBonesMatrices[" + std::to_string(i) + "]", transforms[i]);
 
 
 		// render the loaded model
