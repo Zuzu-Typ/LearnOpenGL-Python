@@ -12,7 +12,7 @@ def calculate_lookAt_matrix(position: glm.vec3, target: glm.vec3, worldUp: glm.v
     # Create translation and rotation matrix
     # In glm we access elements as mat[col][row] due to column-major layout
     translation = glm.mat4(1.0) # Identity matrix by default
-    translation[3][0] = -position.x # Third column, first row
+    translation[3][0] = -position.x # Fourth column, first row
     translation[3][1] = -position.y
     translation[3][2] = -position.z
     rotation = glm.mat4(1.0)

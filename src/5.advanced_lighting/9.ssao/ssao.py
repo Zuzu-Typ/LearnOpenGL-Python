@@ -39,7 +39,7 @@ firstMouse = True
 deltaTime = 0.0
 lastFrame = 0.0
 
-def lerp(a : float, b : float, f : float) -> float:
+def ourLerp(a : float, b : float, f : float) -> float:
     return a + f * (b - a)
 
 def main() -> int:
@@ -162,7 +162,7 @@ def main() -> int:
         scale = float(i) / 64.0
 
         # scale samples s.t. they're more aligned to center of kernel
-        scale = lerp(0.1, 1.0, scale * scale)
+        scale = ourLerp(0.1, 1.0, scale * scale)
         sample *= scale
         ssaoKernel.append(sample)
 

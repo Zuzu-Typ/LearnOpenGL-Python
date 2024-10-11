@@ -145,6 +145,7 @@ def main() -> int:
                     0.0
                 ))
                 shader.setMat4("model", model)
+                shader.setMat3("normalMatrix", glm.transpose(glm.inverse(glm.mat3(model))))
                 renderSphere()
 
 
@@ -162,6 +163,7 @@ def main() -> int:
             model = glm.translate(model, newPos)
             model = glm.scale(model, glm.vec3(0.5))
             shader.setMat4("model", model)
+            shader.setMat3("normalMatrix", glm.transpose(glm.inverse(glm.mat3(model))))
             renderSphere()
 
         # glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
