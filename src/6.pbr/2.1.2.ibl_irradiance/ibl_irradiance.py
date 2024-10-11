@@ -298,6 +298,7 @@ def main() -> int:
                     -2.0
                 ))
                 pbrShader.setMat4("model", model)
+                pbrShader.setMat3("normalMatrix", glm.transpose(glm.inverse(glm.mat3(model))))
                 renderSphere()
 
 
@@ -315,6 +316,7 @@ def main() -> int:
             model = glm.translate(model, newPos)
             model = glm.scale(model, glm.vec3(0.5))
             pbrShader.setMat4("model", model)
+            pbrShader.setMat3("normalMatrix", glm.transpose(glm.inverse(glm.mat3(model))))
             renderSphere()
 
         # render skybox (render as last to prevent overdraw)

@@ -426,6 +426,7 @@ def main() -> int:
         model = glm.mat4(1.0)
         model = glm.translate(model, glm.vec3(-5.0, 0.0, 2.0))
         pbrShader.setMat4("model", model)
+        pbrShader.setMat3("normalMatrix", glm.transpose(glm.inverse(glm.mat3(model))))
         renderSphere()
 
         # gold
@@ -443,6 +444,7 @@ def main() -> int:
         model = glm.mat4(1.0)
         model = glm.translate(model, glm.vec3(-3.0, 0.0, 2.0))
         pbrShader.setMat4("model", model)
+        pbrShader.setMat3("normalMatrix", glm.transpose(glm.inverse(glm.mat3(model))))
         renderSphere()
 
         # grass
@@ -460,6 +462,7 @@ def main() -> int:
         model = glm.mat4(1.0)
         model = glm.translate(model, glm.vec3(-1.0, 0.0, 2.0))
         pbrShader.setMat4("model", model)
+        pbrShader.setMat3("normalMatrix", glm.transpose(glm.inverse(glm.mat3(model))))
         renderSphere()
 
         # plastic
@@ -477,6 +480,7 @@ def main() -> int:
         model = glm.mat4(1.0)
         model = glm.translate(model, glm.vec3(1.0, 0.0, 2.0))
         pbrShader.setMat4("model", model)
+        pbrShader.setMat3("normalMatrix", glm.transpose(glm.inverse(glm.mat3(model))))
         renderSphere()
 
         # wall
@@ -494,6 +498,7 @@ def main() -> int:
         model = glm.mat4(1.0)
         model = glm.translate(model, glm.vec3(3.0, 0.0, 2.0))
         pbrShader.setMat4("model", model)
+        pbrShader.setMat3("normalMatrix", glm.transpose(glm.inverse(glm.mat3(model))))
         renderSphere()
 
         # render light source (simply re-render sphere at light positions)
@@ -510,6 +515,7 @@ def main() -> int:
             model = glm.translate(model, newPos)
             model = glm.scale(model, glm.vec3(0.5))
             pbrShader.setMat4("model", model)
+            pbrShader.setMat3("normalMatrix", glm.transpose(glm.inverse(glm.mat3(model))))
             renderSphere()
 
         # render skybox (render as last to prevent overdraw)

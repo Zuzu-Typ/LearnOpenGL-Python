@@ -188,8 +188,6 @@ def main() -> int:
 
         # 2. render scene as normal using the generated depth/shadow map  
         # --------------------------------------------------------------
-        glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT)
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         shader.use()
         projection = glm.perspective(glm.radians(camera.Zoom), SCR_WIDTH / SCR_HEIGHT, 0.1, 100.0)
         view = camera.GetViewMatrix()
