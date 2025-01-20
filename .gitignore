@@ -5,7 +5,3 @@ build/
 # ignores following file extensions
 *.pyc
 
-# ignores following files
-cpp_to_py.py
-apply_requirements.py
-master_requirements.dat

@@ -1,0 +1,9 @@
+{
+"from PIL import .*" : "Pillow==11.1.0", 
+"from glfw.*" : "glfw==2.8.0", 
+"import.* glm" : "PyGLM==2.7.3", 
+"from OpenGL.*" : "PyOpenGL==3.1.9\nPyOpenGL_accelerate==3.1.9", 
+"import numpy" : "numpy==2.2.2", 
+"import assimp_py" : "assimp-py==1.0.8", 
+"import imageio" : "imageio==2.37.0"
+}

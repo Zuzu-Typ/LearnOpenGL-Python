@@ -1,4 +1,4 @@
 wheel
-glfw==2.7.0
-PyOpenGL==3.1.7
-PyOpenGL_accelerate==3.1.7
+glfw==2.8.0
+PyOpenGL==3.1.9
+PyOpenGL_accelerate==3.1.9

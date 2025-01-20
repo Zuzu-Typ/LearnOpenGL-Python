@@ -3,16 +3,14 @@ Python translation of the popular [LearnOpenGL](https://learnopengl.com)'s sourc
 Currently chapters 1-6 have been completely translated.
 
 The translation is very close to the original C++ source code, which makes it easy to use alongside the tutorial.
+It's partially machine translated. Please create an issue if you notice any mistakes, incorrect requirements or wrong formatting.
 
 Most examples should run right out of the box, as they install the PyPI requirements automatically from the respective `requirements.txt`.
-Currently, only Python versions `3.9` - `3.11` are supported. This is limited by the `PyOpenGL_accelerate` and `assimp-py` libraries, which are only irregularly maintained. 
+**Python `3.9+`** is required.
 
-If you get an error related to `numpy` when running one of the examples, make sure to install version `1.26.4` (PyOpenGL is currently incompatible with numpy 2.0):
-```
-pip install numpy==1.26.4
-```
-
+## Getting started
 You can find the examples in the `src` folder.  
+You may want use them alongside [LearnOpenGL.com](https://learnopengl.com).  
 To run the first example you simply need to run `src/1.getting_started/1.1.hello_window/hello_window.py`.
 
 Here are some screenshots of the examples (one from each chapter):  
@@ -28,3 +26,17 @@ Here are some screenshots of the examples (one from each chapter):
 ![Chapter 5](screenshots/5.8.1.png)
 ## Chapter 6, [Exercise 2.2.1](https://github.com/Zuzu-Typ/LearnOpenGL-Python/tree/master/src/6.pbr/2.2.1.ibl_specular)
 ![Chapter 6](screenshots/6.2.2.1.png)
+
+## Troubleshooting
+### NumPy related error
+If you get an error related to `numpy` when running one of the examples, make sure to install version `1.26.4`:
+```
+pip install numpy==1.26.4
+```
+
+### Other errors
+If an example does not run out of the box, please make sure the required packages are installed. This should happen automatically,
+however, this project uses an old version of my requirements installer, which might not work correctly on all platforms.
+If you suspect that required packages are missing, please take a look at `master_requirements.dat` and install the packages listed there.
+
+Otherwise, feel free to open a new issue.
