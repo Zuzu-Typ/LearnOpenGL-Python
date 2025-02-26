@@ -10,7 +10,7 @@ Most examples should run right out of the box, as they install the PyPI requirem
 
 ## Getting started
 You can find the examples in the `src` folder.  
-You may want use them alongside [LearnOpenGL.com](https://learnopengl.com).  
+You may want to use them alongside [LearnOpenGL.com](https://learnopengl.com).  
 To run the first example you simply need to run `src/1.getting_started/1.1.hello_window/hello_window.py`.
 
 Here are some screenshots of the examples (one from each chapter):  
