@@ -62,7 +62,7 @@ def main() -> int:
 # ---------------------------------------------------------------------------------------------------------
 def processInput(window: GLFWwindow) -> None:
     if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS):
-        glfwSetWindowShouldClose(window, true)
+        glfwSetWindowShouldClose(window, True)
 
 # glfw: whenever the window size changed (by OS or user resize) this callback function executes
 # ---------------------------------------------------------------------------------------------
